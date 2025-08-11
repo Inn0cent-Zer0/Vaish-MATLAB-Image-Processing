@@ -1,0 +1,12 @@
+dilbar = imread('C:/Program Files/MATLAB/R2014b/toolbox/images/imdata/cameraman.tif');
+subplot(1, 3, 1);
+imshow(dilbar);
+title('Original');
+goms = dilbar + 50;  
+subplot(1, 3, 2);
+imshow(goms);
+title('after Addition');
+caps = goms - 175;
+subplot(1,3, 3);
+imshow(caps);
+title('after Subtraction');

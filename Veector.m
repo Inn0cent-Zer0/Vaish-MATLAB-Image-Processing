@@ -1,0 +1,10 @@
+data = rand(100,2);
+K = 10;
+codebook = rand(K,2);
+[~,indices] = pdist2(codebook, data,'euclidean','Smallest',1);
+encodeData = codebook(indices,:);
+compressionRatio = nume(data)/nume(encodeData);
+decodedData = codebook(indices,:);
+distorion = mean(sqrt(sum((data - decodedData).^2,2)));
+fprintf('Compression Ratio: %.2f\n',compressionRatio);
+fprintf('Distortion: %.4f\n',distortion);
